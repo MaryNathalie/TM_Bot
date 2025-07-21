@@ -59,13 +59,13 @@ This is a step-by-step guide to set up and run the application.
     ```
     *(Note: This step is **not** required for the CPU-only installation, as the application will automatically use a simpler PDF parser.)*
     
-3.  **Start the Streamlit App:**
+4.  **Start the Streamlit App:**
     Execute the following command from the root directory:
     ```bash
     streamlit run app.py
     ```
 
-4.  **Access the Application:**
+5.  **Access the Application:**
     Open your web browser and navigate to `http://localhost:8501`. You will be prompted to enter your OpenAI API key to authenticate. Once authenticated, you can upload a PDF and start interacting with the chatbot.
 
 
