@@ -261,4 +261,3 @@ Your task is to provide a concise, bullet-point summary of the key facts and ins
 * **More Robust CPU-based Processing:** The current `PyPDF`-based processing is simple. It could be improved by using regular expressions and sentence tokenizers to better handle the text structure.
 * **Chat Session Management:** Implement a feature to save and load chat sessions, allowing users to resume their conversations at a later time.
 * **Comprehensive Evaluation Framework:** Implement a more formal evaluation framework using metrics like RAGAs to quantitatively assess the performance of the RAG pipeline.
-*  **CPU-Specific Conda Environment:** I ran the application in a GPU server. Thus, the requirements.txt is suitable for devices with GPUs. Create a CPU-specific requirements.txt
