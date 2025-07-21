@@ -167,7 +167,7 @@ Your task is to provide a concise, bullet-point summary of the key facts and ins
 
 ### General Questions
 
-| What the User Sees | What the Agent Does |
+| What the User Sees | What the Agent Does (General Information Search Tool) |
 | :---: | :---: |
 | ![General Question Example_01](assets/QnA_01_Front.png) | ![General Question Backend_01](assets/QnA_01_Back.png) |
 | ![General Question Example_02](assets/QnA_03_Front.png) | ![General Question Backend_02](assets/QnA_03_Back.png) |
@@ -175,7 +175,7 @@ Your task is to provide a concise, bullet-point summary of the key facts and ins
 
 ### Financial Questions
 
-| What the User Sees | What the Agent Does |
+| What the User Sees | What the Agent Does (Financial Data Search Tool) |
 | :---: | :---: |
 | ![Financial Question Example_01](assets/FA_02_Front.png) | ![Financial Question Backend_01](assets/FA_02_Back.png) |
 | ![Financial Question Example_02](assets/FA_03_Front.png) | ![Financial Question Backend_02](assets/FA_03_Back.png) |
@@ -183,28 +183,28 @@ Your task is to provide a concise, bullet-point summary of the key facts and ins
 
 ### Summarization Tasks
 
-| What the User Sees | What the Agent Does |
+| What the User Sees | What the Agent Does (Document Summarizer Tool) |
 | :---: | :---: |
 | ![Summarization Example_01](assets/Summ_01_Front.png) | ![Summarization Backend_01](assets/Summ_01_Back.png) |
 | ![Summarization Example_02](assets/Summ_02_Front.png) | ![Summarization Backend_02](assets/Summ_02_Back.png) |
 
 ### Follow-Up Questions
 
-| What the User Sees | What the Agent Does |
+| What the User Sees | What the Agent Does (Multiple Tools) |
 | :---: | :---: |
 | ![Follow-Up Question Example](assets/FF_Front.png) | ![Follow-Up Question Backend](assets/FF_Back.png) |
 
 ### Table Retreival
 
-| What the User Sees | What the Agent Does |
+| What the User Sees | What the Agent Does (No Tool) |
 | :---: | :---: |
 | ![Table Example](assets/Ran_01_Front.png) | ![Follow-Up Question Backend](assets/Ran_01_Back.png) |
 
 ## 6. Challenges Faced and Solutions Implemented
 
 ### LangChain and RAG Familiarity
-* **Challenge:** I had a theoretical understanding of LangChain and RAG but had not yet built an application using these technologies.
-* **Solution:** I quickly ramped up by taking the "LangChain & Vector Databases in Production" course on ActiveLoop. This provided me with the foundational knowledge and practical skills needed to build this application.
+* **Challenge:** I had a general understanding of LangChain and RAG but had not yet built an application using these technologies.
+* **Solution:** I quickly learned how to build it by taking the "LangChain & Vector Databases in Production" course on ActiveLoop. This provided me with the foundational knowledge and practical skills needed to build this application. 
 
 ### Document Processing
 * **Challenge:** PDFs are difficult to parse, especially when they contain a mix of text, images, and tables. Simple text extraction often fails to capture the structure and content of tables accurately.
