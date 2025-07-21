@@ -64,14 +64,6 @@ def create_router_agent(general_rag_chain, financial_rag_chain, summarization_fu
 
     prompt = ChatPromptTemplate.from_messages([
         ("system", "You are an intelligent routing assistant. Your job is to analyze the user's question and choose the most appropriate tool to answer it."),
-        
-        ("human", "What are Microsoft’s goals for AI in the coming years?"),
-        ("ai", "General_Information_Search"),
-        ("human", "How much did Microsoft earn in revenue and operating income in 2023?"),
-        ("ai", "Financial_Data_Search"),
-        ("human", "What are Microsoft’s goals for AI in the coming years?"),
-        ("ai", "General_Information_Search"),
-
         MessagesPlaceholder(variable_name="chat_history", optional=True),
         ("human", "{input}"),
         MessagesPlaceholder(variable_name="agent_scratchpad"),
