@@ -26,7 +26,7 @@ This is a step-by-step guide to set up and run the application.
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [[repository_url]](https://github.com/MaryNathalie/TM_Bot.git)
+    git clone https://github.com/MaryNathalie/TM_Bot.git
     cd TM_Bot
     ```
 
