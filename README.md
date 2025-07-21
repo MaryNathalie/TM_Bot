@@ -153,24 +153,6 @@ Your task is to provide a concise, bullet-point summary of the key facts and ins
 * **Constraints and Formatting**: The prompt provides clear constraints (`**no more than 5 bullet points**`) and formatting instructions (`bullet-point summary`). This ensures that the output is easy to read and digest.
 * **Relevance Filtering**: The instruction to summarize facts that are `**directly relevant**` to the user's 'Question' is key to preventing the model from generating a generic summary of the entire document.
 
-### Route Agent Prompt
-```python
-ChatPromptTemplate.from_messages([
-    ("system", "You are an intelligent routing assistant. Your job is to analyze the user's question and choose the most appropriate tool to answer it."),
-    ("human", "What are Microsoft’s goals for AI in the coming years?"),
-    ("ai", "General_Information_Search"),
-    ("human", "How much did Microsoft earn in revenue and operating income in 2023?"),
-    ("ai", "Financial_Data_Search"),
-    MessagesPlaceholder(variable_name="chat_history", optional=True),
-    ("human", "{input}"),
-    MessagesPlaceholder(variable_name="agent_scratchpad"),
-])
-```
-**Reasoning:**
-* **Assistant Role with Examples**: The prompt sets up the `system` and `ai` roles with a clear objective and few-shot examples. This is highly effective for showing the router agent how to map a user's `human` query to the correct tool.
-* **Conversational Context**: The inclusion of `MessagesPlaceholder(variable_name="chat_history")` allows the agent to consider the entire conversation history when deciding which tool to use.
-* **Agent Scratchpad**: The `agent_scratchpad` placeholder allows the agent to keep track of its intermediate steps and reasoning (its own "chain of thought"), which is essential for more complex, multi-step operations.
-
 ## 5. Use Cases and Examples
 
 TO FOLLOW
