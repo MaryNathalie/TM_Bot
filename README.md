@@ -34,7 +34,7 @@ This is a step-by-step guide to set up and run the application.
 
     This project has two separate dependency files. **Choose the one that matches your hardware.**
 
-    * **For CPU-only machines (most local setups):**
+    * **For CPU-only machines:**
         ```bash
         pip install -r requirements-cpu.txt
         ```
