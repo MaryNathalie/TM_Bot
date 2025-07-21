@@ -42,10 +42,9 @@ This is a step-by-step guide to set up and run the application.
         ```bash
         pip install -r requirements-gpu.txt
         ```
-        
-3.  **Download Docling Models (Required for GPU/Docling Path)**
+3.  **Download Docling Models (Required for GPU Path Only)**
 
-    The `docling` library, used for high-quality PDF parsing, requires pre-trained model artifacts. To ensure reproducibility and prevent potential errors on systems with administrator restrictions, create the cache directory and download the models manually.
+    If you installed the **GPU** requirements, the `docling` library needs pre-trained model artifacts to function. To ensure reproducibility, you should create the cache directory and download the models manually.
 
     For more details, refer to the [official docling documentation on model pre-fetching](https://docling-project.github.io/docling/usage/#model-prefetching-and-offline-usage).
 
@@ -58,6 +57,7 @@ This is a step-by-step guide to set up and run the application.
     # 2. Use docling-tools to download models into the correct local directory.
     docling-tools models download -o src/.cache/docling
     ```
+    *(Note: This step is **not** required for the CPU-only installation, as the application will automatically use a simpler PDF parser.)*
     
 3.  **Start the Streamlit App:**
     Execute the following command from the root directory:
