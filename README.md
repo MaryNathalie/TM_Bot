@@ -94,8 +94,8 @@ You are a highly precise AI assistant designed for answering questions from a sp
 **Reasoning:**
 * **Role Prompting**: The prompt begins by assigning the LLM the role of a `highly precise AI assistant`.
 * **Grounding and Guardrails**: The instructions `use ONLY the provided context` and `Do not use any external knowledge` prevents the model from hallucinating. Using `**strictly**` with markdown bolding adds strong emphasis.
-* **Verifiability**: The requirement to `**quote the key phrase**` forces the model to cite its sources from the context, making the answer verifiable and increasing user trust.
-* **Structure and Delimiters**: The use of `###` headers (e.g., `### System:`, `### Instructions:`) clearly delineates the different parts of the prompt, making it easy for the model to parse and understand its task.
+* **Verifiability**: The requirement to `**quote the key phrase**` forces the model to cite its sources from the context.
+* **Structure and Delimiters**: The use of `###` headers (e.g., `### System:`, `### Instructions:`) delineates the different parts of the prompt, making it easy for the model to parse.
 
 ### Financial QA Prompt
 ```
