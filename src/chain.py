@@ -28,7 +28,9 @@ def create_summarization_chain(llm, docs):
     chain = load_summarize_chain(llm, chain_type="stuff", prompt=SUMMARIZE_PROMPT)
     
     def summarizer(input_str: str):
-        return chain.invoke(docs[:20]) # Pass only the first 20 documents to the chain.
+        # The result from the chain is a dictionary, so we extract the 'output_text'.
+        result = chain.invoke({"input_documents": docs[:20], "question": input_str})
+        return result.get('output_text', "I couldn't generate a summary.")
         
     return summarizer
 
@@ -40,14 +42,14 @@ def create_router_agent(general_rag_chain, financial_rag_chain, summarization_fu
         Tool(
             name="General_Information_Search",
             # The lambda function is now correct because the chain it calls is stateful.
-            func=lambda agent_input: general_rag_chain.invoke({"question": agent_input}),
+            func=lambda agent_input: general_rag_chain.invoke({"question": agent_input}).get('answer', 'No answer found for the general question.'),
             description="""
             Use this tool for questions about qualitative information, explanations, strategies, policies, and other narrative content.
             """
         ),
         Tool(
             name="Financial_Data_Search",
-            func=lambda agent_input: financial_rag_chain.invoke({"question": agent_input}),
+            func=lambda agent_input: financial_rag_chain.invoke({"question": agent_input}).get('answer', 'No answer found for the general question.'),
             description="""
             Use this tool for questions requiring specific financial metrics, figures, or data points like revenue, profit, or share prices.
             """
@@ -63,12 +65,12 @@ def create_router_agent(general_rag_chain, financial_rag_chain, summarization_fu
     ]
 
     prompt = ChatPromptTemplate.from_messages([
-        ("system", "You are an intelligent routing assistant. Your job is to analyze the user's question and choose the most appropriate tool to answer it."),
+        ("system", "You are a helpful assistant that routes a user's question to the correct tool."),
         MessagesPlaceholder(variable_name="chat_history", optional=True),
         ("human", "{input}"),
         MessagesPlaceholder(variable_name="agent_scratchpad"),
     ])
-    
+
     agent = create_openai_tools_agent(llm, tools, prompt)
     
     router_agent_executor = AgentExecutor(
