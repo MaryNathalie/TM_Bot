@@ -30,10 +30,19 @@ This is a step-by-step guide to set up and run the application.
     cd TM_Bot
     ```
 
-2.  **Install Dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+2.  **Install Python Dependencies:**
+
+    This project has two separate dependency files. **Choose the one that matches your hardware.**
+
+    * **For CPU-only machines (most local setups):**
+        ```bash
+        pip install -r requirements-cpu.txt
+        ```
+    * **For machines with an NVIDIA GPU and CUDA:**
+        ```bash
+        pip install -r requirements-gpu.txt
+        ```
+        
 3.  **Download Docling Models (Required for GPU/Docling Path)**
 
     The `docling` library, used for high-quality PDF parsing, requires pre-trained model artifacts. To ensure reproducibility and prevent potential errors on systems with administrator restrictions, create the cache directory and download the models manually.
