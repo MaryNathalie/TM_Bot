@@ -34,7 +34,22 @@ This is a step-by-step guide to set up and run the application.
     ```bash
     pip install -r requirements.txt
     ```
+3.  **Download Docling Models (Required for GPU/Docling Path)**
 
+    The `docling` library, used for high-quality PDF parsing, requires pre-trained model artifacts. To ensure reproducibility and prevent potential errors on systems with administrator restrictions, create the cache directory and download the models manually.
+
+    For more details, refer to the [official docling documentation on model pre-fetching](https://ds4sd.github.io/docling/usage/#model-prefetching-and-offline-usage).
+
+    Execute the following commands from the **root directory** of the project:
+
+    ```bash
+    # 1. Ensure the target cache directory exists within the 'src' folder.
+    mkdir -p src/.cache
+
+    # 2. Use docling-tools to download models into the correct local directory.
+    docling-tools models download -o src/.cache/docling
+    ```
+    
 3.  **Start the Streamlit App:**
     Execute the following command from the root directory:
     ```bash
