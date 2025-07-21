@@ -38,7 +38,7 @@ This is a step-by-step guide to set up and run the application.
 
     The `docling` library, used for high-quality PDF parsing, requires pre-trained model artifacts. To ensure reproducibility and prevent potential errors on systems with administrator restrictions, create the cache directory and download the models manually.
 
-    For more details, refer to the [official docling documentation on model pre-fetching](https://ds4sd.github.io/docling/usage/#model-prefetching-and-offline-usage).
+    For more details, refer to the [official docling documentation on model pre-fetching](https://docling-project.github.io/docling/usage/#model-prefetching-and-offline-usage).
 
     Execute the following commands from the **root directory** of the project:
 
