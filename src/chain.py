@@ -51,7 +51,7 @@ def create_router_agent(general_rag_chain, financial_rag_chain, summarization_fu
             name="Financial_Data_Search",
             func=lambda agent_input: financial_rag_chain.invoke({"question": agent_input}).get('answer', 'No answer found for the general question.'),
             description="""
-            Use this tool for questions requiring specific financial metrics, figures, or data points like revenue, profit, or share prices.
+            Use this tool for questions on financial metrics, figures, or data points like revenue, profit, or share prices.
             """
         ),
         Tool(
